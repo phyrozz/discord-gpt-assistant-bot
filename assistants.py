@@ -7,7 +7,7 @@ client = OpenAI(
 )
 
 
-def handle_response(thread_id: str, content: str) -> str:
+async def handle_response(thread_id: str, content: str) -> str:
     client.beta.threads.messages.create(
         thread_id=thread_id,
         role="user",
@@ -27,6 +27,6 @@ def handle_response(thread_id: str, content: str) -> str:
         return messages.data[0].content[0].text.value
 
 
-def create_thread():
+async def create_thread():
     thread = client.beta.threads.create()
     return thread
