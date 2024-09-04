@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 80
 
 # Run bot when the container launches
-CMD ["python", "main.py"]
+CMD ["python", "run_bot.py"]
